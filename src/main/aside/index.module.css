@@ -1,0 +1,62 @@
+.setBar {
+    background-color: #2e4053;
+    width: 20%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 25px;
+    border-radius: 10px;
+}
+
+.betAmount, .numberOfBombs {
+    font-size: 24px;
+}
+
+.betAmountInput {
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #5d6d7e;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.bombsBtns {
+    box-shadow: -100px -100px 0px -100px rgba(34, 60, 80, 0) inset;
+    display: flex;
+    gap: 10px;
+}
+
+.bombsBtns button{
+    width: 40px;
+    height: 40px;
+    background-color: #5d6d7e;
+    border: none;
+    border-radius: 5px;
+}
+
+.bombsBtns button:hover {
+    background-color: #5d6d7e86;
+}
+
+#play, #take {
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5d6d7e;
+    font-size: 18px;
+}
+
+#takeHid {
+    display: none;
+}
+
+#playHid {
+    display: none;
+}
+
+#play:hover {
+    background-color: #5d6d7e86;
+}

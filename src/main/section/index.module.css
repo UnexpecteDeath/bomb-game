@@ -1,0 +1,85 @@
+.gameBar {
+    background-color: #2e4053;
+    width: 45%;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.minefield {
+    width: 450px;
+    height: 450px;
+    background-color: #34495e;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -100px -100px 0px -100px rgba(34, 60, 80, 0) inset;
+    border: 4px solid #212f3c;
+}
+
+#playing {
+    width: 100%;
+    height: 100%;
+    background-color: #0000003d;
+    position: absolute;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#death {
+    width: 100%;
+    height: 100%;
+    background-color: #0000003d;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dollars, .bombs {
+    box-shadow: 0px 5px 17px -3px rgba(34, 60, 80, 0);
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    gap: 5px;
+    width: 10%;
+}
+
+.dollar, .bomb{
+    width: 50px;
+}
+
+.mine {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: -100px -100px 0px -100px rgba(34, 60, 80, 0) inset;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e4053;
+    border: none;
+}
+
+.mine:hover {
+    background-color: #2e40538a;
+}
+
+.mineImgHid {
+    visibility: hidden;
+    width: 60px;
+}
+
+.mineImgVis {
+    visibility: visible;
+    width: 60px;
+}
