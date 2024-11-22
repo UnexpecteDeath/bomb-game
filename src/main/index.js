@@ -1,5 +1,4 @@
 import { Aside } from "./aside"
-import style from "./index.module.css"
 import { Section } from "./section"
 import { useState } from 'react';
 
@@ -21,7 +20,7 @@ export function Main({setBombs, bombs, balance, setBalance}) {
     }
 
     function render(betValue) {
-        if(betValue <= 0) return;
+        if(betValue <= 0 && balance <= 0) return;
         setBalance(balance - betValue)
         setPlay(true)
         setTextTakeBtn('Select cell')
@@ -51,7 +50,7 @@ export function Main({setBombs, bombs, balance, setBalance}) {
     }
 
     return (
-        <main>
+        <main className="mt-32 flex justify-center gap-x-96">
             <Aside gameOver={ gameOver } bombs={ bombs } balance={ balance } setBalance={ setBalance } textTakeBtn={ textTakeBtn } click={click} betValue={ betValue } setBetValue={ setBetValue } play={ play } setBombs={ setBombs } render={ render }/>
             <Section gameOver={ gameOver } setTextTakeBtn={ setTextTakeBtn } click={ click } setClick={ setClick } setPlay={ setPlay }  play={ play } bombs={ bombs } mines={ mines } setMines={ setMines }/>
         </main>

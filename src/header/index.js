@@ -1,11 +1,10 @@
 import logo from "../images/dollar-bill.svg"
-import style from "./index.module.css"
 
  export function Header({balance}) {
     return (
-        <header>
-        <div className={style.logo}><p>Freebie</p><img src={logo} alt=""></img></div>
-        <div className={style.balanceCont}>Balance <p id='balance'>{balance}$</p></div>
+        <header className="bg-green-500 rounded-b-md h-20 flex justify-between px-14 items-center text-2xl ">
+        <div className="flex gap-2"><p>Freebie</p><img className="w-10" src={logo} alt=""></img></div>
+        <div className="flex gap-2">Balance <p id='balance'>{balance}$</p></div>
       </header>
     )
 }

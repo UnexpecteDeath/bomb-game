@@ -1,4 +1,4 @@
-import style from "./index.module.css"
+
 import {x3Bombs , x5Bombs, x10Bombs, x24Bombs} from "../../main/x"
 
 export function Aside({ setBombs, render, play, betValue, setBetValue, click, textTakeBtn, balance, setBalance, bombs, gameOver }) {
@@ -15,18 +15,18 @@ export function Aside({ setBombs, render, play, betValue, setBetValue, click, te
     }
 
     return (
-            <aside className={style.setBar}>
-                <p className={style.betAmount}>Bet amount</p>
-                <input id="input" className={style.betAmountInput} type="number" value={ betValue } onChange={ handleChange }></input>
-                <p className={style.numberOfBombs}>Number of bombs</p>
-                <div className={style.bombsBtns}>
-                    <button id="3bombs" onClick={() => setBombs(3)}>3</button>
-                    <button id="5bombs" onClick={() => setBombs(5)}>5</button>
-                    <button id="10bombs" onClick={() => setBombs(10)}>10</button>
-                    <button id="24bombs" onClick={() => setBombs(24)}>24</button>
+            <aside className="bg-green-500 w-1/6 rounded-lg px-4">
+                <p className="text-2xl mt-4">Bet amount</p>
+                <input id="input" className="outline-none w-64 mt-4 h-10 rounded-md bg-green-200 px-2" type="number" value={ betValue } onChange={ handleChange }></input>
+                <p className="text-2xl mt-8">Number of bombs</p>
+                <div className="flex gap-5 mt-6">
+                    <button className="w-12 h-12 bg-green-200 rounded-lg"  onClick={() => setBombs(3)}>3</button>
+                    <button className="w-12 h-12 bg-green-200 rounded-lg" onClick={() => setBombs(5)}>5</button>
+                    <button className="w-12 h-12 bg-green-200 rounded-lg" onClick={() => setBombs(10)}>10</button>
+                    <button className="w-12 h-12 bg-green-200 rounded-lg" onClick={() => setBombs(24)}>24</button>
                 </div>
-                <button id={play ? style.playHid : style.play} onClick={() => render(betValue)}>Play</button>
-                <button id={play ? style.take : style.takeHid} onClick={ take }>{textTakeBtn}</button>
+                <button className={`bg-green-200 w-64 mt-6 h-12 rounded-lg text-xl ${ play ? "hidden" : ""}`} onClick={() => render(betValue)}>Play</button>
+                <button className={`bg-green-200 w-64 mt-6 h-12 rounded-lg text-xl ${ play ? "" : "hidden"}`} onClick={ take }>{textTakeBtn}</button>
             </aside>
     )
 }
