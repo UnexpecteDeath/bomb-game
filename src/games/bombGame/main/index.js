@@ -20,23 +20,25 @@ export function Main({setBombs, bombs, balance, setBalance}) {
     }
 
     function render(betValue) {
-        if(betValue <= 0 && balance <= 0) return;
-        setBalance(balance - betValue)
-        setPlay(true)
-        setTextTakeBtn('Select cell')
-        const newMines = [];
-        let random = getRandomInt(1, 25, bombs)
-        let element = 0;
-        for(let i = 0; i < 25; i++) {
-            element += 1;
-            const explosion = random.indexOf(element) !== -1;
-            newMines.push({
-                id: i,
-                type: explosion ? "death" : "dollar",
-                clicked: false,
-            })
+        if(betValue > 0 && betValue <= balance) {
+            setBalance(balance - betValue)
+            localStorage.setItem('balance', balance - betValue);
+            setPlay(true)
+            setTextTakeBtn('Select cell')
+            const newMines = [];
+            let random = getRandomInt(1, 25, bombs)
+            let element = 0;
+            for(let i = 0; i < 25; i++) {
+                element += 1;
+                const explosion = random.indexOf(element) !== -1;
+                newMines.push({
+                    id: i,
+                    type: explosion ? "death" : "dollar",
+                    clicked: false,
+                })
+            }
+            setMines(newMines)
         }
-        setMines(newMines)
     }
 
 

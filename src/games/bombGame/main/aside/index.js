@@ -11,6 +11,7 @@ export function Aside({ setBombs, render, play, betValue, setBetValue, click, te
         if(click === 0) return;
         let winBet = bombs === 3 ? x3Bombs[click] : bombs === 5 ? x5Bombs[click] : bombs === 10 ? x10Bombs[click] : x24Bombs[click];
         setBalance(balance + betValue*winBet)
+        localStorage.setItem('balance', balance + betValue*winBet);
         gameOver()
     }
 

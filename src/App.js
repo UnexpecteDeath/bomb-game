@@ -1,17 +1,26 @@
-import './App.css';
-import { Header } from './header';
-import { Main } from './main';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import GameMenu from './GameMenu';
+import './App.css'
+import BombGame from "./games/bombGame/bombGame";
 
 function App() {
-  const [balance, setBalance] = useState(100);
-  const [bombs, setBombs] = useState(3)
-  return (
-    <>
-        <Header balance={balance}/>
-        <Main balance={balance} setBalance={setBalance} bombs={bombs}  setBombs={setBombs}/>
-    </>
-  );
+    const [choiceGame, setChoiceGame] = useState(null);
+    useEffect(() => {
+        if(sessionStorage.choiceGame) {
+            setChoiceGame(sessionStorage.choiceGame)
+        } else {
+            setChoiceGame(null)
+        }
+    }, [])
+
+
+
+    return (
+        <>
+        {!choiceGame && <GameMenu setChoiceGame={ setChoiceGame } />}
+        {choiceGame === "BombGame" && <BombGame setChoiceGame = { setChoiceGame} />}
+        </>
+    );
 }
 
 export default App;
